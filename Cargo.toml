@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "passogen-cli",
+    "passogen-lib",
+]
