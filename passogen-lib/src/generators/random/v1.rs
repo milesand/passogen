@@ -84,8 +84,8 @@ fn generate_from_entropy(
         let min_length = config
             .min_length
             .max(config.min_lower + config.min_upper + config.min_number + config.min_special);
-        let diff = config.max_length - config.min_length;
-        config.min_length + entropy.get_usize_with_max(diff)?
+        let diff = config.max_length - min_length;
+        min_length + entropy.get_usize_with_max(diff)?
     };
     let mut char_pos_pairs = Vec::new();
     let mut indices: Vec<_> = (0..length).collect();
